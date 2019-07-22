@@ -1,0 +1,58 @@
+// /companies
+// /genres
+// /locations
+// /rooms
+// /themes
+
+/companies
+{
+    "name": "name of company", 
+    "franchise": "bool",
+    "rooms": ["array of room ids"],
+    "locations": ["Array of location ids"],
+    "slug": "url safe slug", 
+    "website": "website of company"
+}
+
+/locations
+{
+    "city_name": "name of city",
+    "companies": [
+        "array of company ids found in location"
+    ],
+    "country": "name of country",
+    "rooms": [
+        "array of room ids found in location"
+    ],
+    "state": "name of state if in US"
+}
+
+/rooms
+{
+    "address": "address of room",
+    "age_requirement": "minimum age of players",
+    "average_rating": "average review rating of all reviews on site",
+    "company": "id of company room belongs to",
+    "description": "description of the room",
+    "difficulty": "difficulty",
+    "fear_level": "scariness of room",
+    "genre": [
+        "array of genre ids"
+    ],
+    "locations": [
+        "array of location ids where room is"
+    ],
+    "name": "name of room",
+    "players": "number of players",
+    "reviews": [
+        "Array of reviews"
+    ],
+    "reviews_num": "number of reviews",
+    "tags": [
+        "array of tag ids"
+    ],
+    "themes": [
+        "array of theme ids"
+    ],
+    "time_limit": "time limit for room"
+}

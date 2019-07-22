@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  color: #000;
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+}
+
+body {
+  background: #eee;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  width: 100vw;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 525px;
+  height: 412px;
+  background: #fff;
+}
+
+.gif {
+  margin-bottom: 50px;
+}
+
+.logo-404 {
+  font-size: 3em;
+}
+
+/*# sourceMappingURL=404.css.map */

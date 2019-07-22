@@ -1,0 +1,60 @@
+.header {
+  display: flex;
+  background: #fff;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 10px;
+  width: 98.5%;
+  background: rgba(255, 255, 255, 0.6);
+}
+.header a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: #000;
+}
+.header a img {
+  margin: 0 0 10px 0;
+}
+.header .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s;
+}
+.header .card:hover {
+  transform: scale(1.1);
+}
+.header .card:active {
+  transform: scale(1);
+}
+.header .card-logo span {
+  font-weight: 700;
+  font-size: 1.9em;
+  color: #c357a1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-family: "Lato", sans-serif;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+body {
+  background: no-repeat url("../../assets/colors.jpg");
+  background-size: cover;
+}
+
+/*# sourceMappingURL=index.css.map */
