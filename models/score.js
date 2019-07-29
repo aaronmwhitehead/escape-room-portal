@@ -2,11 +2,8 @@ const mongoose = require('mongoose');
 
 const schema = new mongoose.Schema({
     time: String,
-    date: String,
-    emails: [String],
-    names: [String],
-    phones: [String],
-    spots_remaining: Number,
+    team_name: String, 
+    photo: String
 }, {
         usePushEach: true
     });
@@ -22,4 +19,4 @@ schema.set('toJSON', {
     }
 });
 
-module.exports = mongoose.model('Room', schema);
+module.exports = mongoose.model('Score', schema);

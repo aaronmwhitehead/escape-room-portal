@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-family: 'Lato', sans-serif; }
+
+a {
+  text-decoration: none; }
+
+body {
+  background: #94d1e4; }
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%; }
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  border: none;
+  padding: 8px;
+  width: 170px;
+  height: 50px;
+  line-height: 100%;
+  cursor: pointer;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  color: #fff;
+  transition: background-color 0.3s; }
+  .btn a {
+    color: #fff; }
+  .btn:active {
+    transform: scale(0.95); }
+  .btn:focus {
+    outline: 0; }
+
+.btn-primary {
+  background: #f04a4a; }
+  .btn-primary:hover {
+    background: #ec2d2d; }
+
+.btn-secondary {
+  background: #162475; }
+  .btn-secondary:hover {
+    background: #1d2b80; }
+
+/*# sourceMappingURL=shared.css.map */

@@ -1,0 +1,22 @@
+@media (max-width: 868px) {
+    .header {
+        height: 80px;
+    }
+
+    .header a img {
+        margin: 20px 15px 0px 15px;
+        height: 36px;
+    }
+
+    .header .card span {
+        font-size: .5em;
+    }
+
+    .header .half-circle {
+        display: none;
+    }
+
+    .header .card-logo span {
+        font-size: 1.4em;
+    }
+}

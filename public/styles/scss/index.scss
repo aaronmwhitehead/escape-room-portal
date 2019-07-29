@@ -1,0 +1,36 @@
+@import './shared/header.scss';
+@import './shared/shared.scss';
+
+body { 
+  background: url('../../assets/colors.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.content {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+
+  .title-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 200px;
+
+    h1 {
+      font-family: 'Londrina Shadow', cursive;
+      color: red;
+      font-size: 3em;
+      text-align: center;
+    }
+  }
+
+  .btn {
+    height: 35px;
+  }
+}

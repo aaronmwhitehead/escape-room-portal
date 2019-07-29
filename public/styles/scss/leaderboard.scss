@@ -1,0 +1,193 @@
+@import './shared/header.scss';
+@import './shared/shared.scss';
+
+.background-img {
+    background: url('../../assets/confetti.jpg');
+    background-size: cover;
+    width: 100%;
+    height: 1400px;
+    z-index: -2;
+    position: absolute;
+    top:0;
+}
+
+.header {
+    opacity: .9;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin: 30px 0 0 0;
+}
+
+.top-ranked {
+    display: flex;
+    width: 100%;
+    align-items: flex-end;
+    margin: 10px 0 20px 0;
+
+    .medal {
+        margin-top: 40px;
+    }
+
+    .escape-time {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    span {
+        font-size: 1.5em;
+        font-weight: 300;
+    }
+
+    .rank {
+        font-weight: 700;
+        color: #51289c;
+    }
+
+    .score {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+        margin: 5px;
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12);
+        border: 1px solid;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+
+    .team-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .team-name {
+            font-size: 1.4em;
+        }
+
+        .team-photo {
+            width: 100px;
+            height: 65px;
+        }
+    }
+
+    .ranked-1 {
+        order: 2;
+        background: rgba(254, 225, 1, 1);
+        height: 520px;
+
+        .medal {
+            background: url('../../assets/first-place-medal.png');
+            background-size: cover;
+            width: 100px;
+            height: 100px;
+        }
+
+        .rank {
+           display: none;
+        }
+    }
+
+    .ranked-2 {
+        order: 1;
+        background: rgba(215, 215, 215, 1);
+        height: 420px;
+
+        .medal {
+            background: url('../../assets/second-place-medal.png');
+            background-size: cover;
+            width: 80px;
+            height: 80px;
+        }
+
+        .rank {
+            display: none;
+        }
+    }
+
+    .ranked-3 {
+        order: 3;
+        background: rgba(167, 112, 68, 1);
+        height: 350px;
+
+        .medal {
+            background: url('../../assets/third-place-medal.png');
+            background-size: cover;
+            width: 60px;
+            height: 60px;
+        }
+
+        .rank {
+            display: none;
+        }
+    }
+}
+
+.other-scores {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    .score {
+        width: 19%;
+        display: flex;
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12);
+        height: 65px;
+        background: rgba(255, 255, 255, 1);
+        margin: 5px;
+        justify-content: space-around;
+        align-items: center;
+        border-radius: 10px;
+        border: 1px solid;
+
+        span{
+            font-size: 1em;
+            color: #444;
+            font-weight: 300;
+        }
+
+        .rank {
+            color: #66428a;
+            font-size: 1.3em;
+            width: 30px;
+            font-weight: 400;
+        }
+    }
+}
+
+@media (max-width: 1940px) {
+    .other-scores .score {
+        width: 24%;
+    }
+}
+
+@media (max-width: 1520px) {
+    .other-scores .score {
+        width: 32%;
+    }
+}
+
+@import './mobile/leaderboard.scss';
+
+@media (max-width: 1146px) {
+    .other-scores .score {
+        width: 45%;
+    }
+}
+
+@media (max-width: 750px) {
+    .other-scores .score {
+        width: 100%;
+    }
+}

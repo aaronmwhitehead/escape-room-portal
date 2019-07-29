@@ -1,55 +1,361 @@
 .header {
   display: flex;
-  background: #fff;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-evenly;
-  padding: 10px;
-  width: 98.5%;
-  background: rgba(255, 255, 255, 0.6);
-}
-.header a {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
-  color: #000;
-}
-.header a img {
-  margin: 0 0 10px 0;
-}
-.header .card {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  transition: all 0.3s;
-}
-.header .card:hover {
-  transform: scale(1.1);
-}
-.header .card:active {
-  transform: scale(1);
-}
-.header .card-logo span {
-  font-weight: 700;
-  font-size: 1.9em;
-  color: #c357a1;
-}
+  width: 80%;
+  height: 140px; }
+  .header .background {
+    position: absolute;
+    background: #d8e8ed;
+    width: 100%;
+    height: 90px;
+    z-index: -1; }
+  .header .half-circle {
+    position: absolute;
+    width: 185px;
+    height: 90px;
+    background-color: #d8e8ed;
+    border-bottom-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+    z-index: -1;
+    margin: 70px 0px 0 -9px; }
+  .header a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #000; }
+    .header a img {
+      margin: 10px 0 0 0;
+      height: 45px; }
+  .header .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all .3s; }
+    .header .card span {
+      transition: all .1s;
+      font-size: .8em;
+      padding: 3px; }
+    .header .card:hover {
+      transform: scale(1.05); }
+    .header .card:active {
+      transform: scale(1); }
+  .header .card-logo {
+    align-self: flex-end; }
+  .header .card-logo span {
+    font-size: 2.4em;
+    color: red;
+    font-family: 'Londrina Shadow', cursive; }
 
+@media (max-width: 868px) {
+  .header {
+    height: 80px; }
+
+  .header a img {
+    margin: 20px 15px 0px 15px;
+    height: 36px; }
+
+  .header .card span {
+    font-size: .5em; }
+
+  .header .half-circle {
+    display: none; }
+
+  .header .card-logo span {
+    font-size: 1.4em; } }
 * {
   margin: 0;
   padding: 0;
   font-size: 16px;
-  font-family: "Lato", sans-serif;
-}
+  font-family: 'Lato', sans-serif; }
+
+a {
+  text-decoration: none; }
+
+body {
+  background: #94d1e4; }
 
 .flex-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%; }
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  border: none;
+  padding: 8px;
+  width: 170px;
+  height: 50px;
+  line-height: 100%;
+  cursor: pointer;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  color: #fff;
+  transition: background-color 0.3s; }
+  .btn a {
+    color: #fff; }
+  .btn:active {
+    transform: scale(0.95); }
+  .btn:focus {
+    outline: 0; }
+
+.btn-primary {
+  background: #f04a4a; }
+  .btn-primary:hover {
+    background: #ec2d2d; }
+
+.btn-secondary {
+  background: #162475; }
+  .btn-secondary:hover {
+    background: #1d2b80; }
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%; }
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%; }
+
+.game-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-}
+  padding: 20px 0;
+  font-weight: 300; }
+  .game-title span {
+    font-size: 2.5em; }
+
+.book-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #f3f3f3;
+  height: 280px;
+  margin-bottom: 20px; }
+  .book-card.time-picker-container {
+    flex: 9;
+    margin: 0 20px 20px 0;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12);
+    border: 1px solid;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px; }
+    .book-card.time-picker-container .date-picker {
+      display: flex;
+      justify-content: space-between;
+      align-items: center; }
+      .book-card.time-picker-container .date-picker .date-view {
+        font-size: 2em;
+        padding: 10px; }
+      .book-card.time-picker-container .date-picker .fas {
+        cursor: pointer;
+        font-size: 1.5em;
+        padding: 10px; }
+    .book-card.time-picker-container .time-picker {
+      display: flex;
+      flex-wrap: wrap;
+      align-content: space-around;
+      width: 100%; }
+      .book-card.time-picker-container .time-picker .btn-time {
+        margin: 20px 5px 0 5px;
+        height: 42px;
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid #000;
+        width: 120px;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: all .3s;
+        -moz-user-select: none;
+        /* Firefox */
+        -ms-user-select: none;
+        /* Internet Explorer */
+        -khtml-user-select: none;
+        /* KHTML browsers (e.g. Konqueror) */
+        -webkit-user-select: none;
+        /* Chrome, Safari, and Opera */
+        -webkit-touch-callout: none;
+        /* Disable Android and iOS callouts*/ }
+        .book-card.time-picker-container .time-picker .btn-time span {
+          font-size: .7em; }
+        .book-card.time-picker-container .time-picker .btn-time:hover, .book-card.time-picker-container .time-picker .btn-time.active {
+          color: #fff;
+          background: #162475; }
+        .book-card.time-picker-container .time-picker .btn-time.not-available {
+          color: #ccc;
+          border-color: #ccc;
+          cursor: default; }
+          .book-card.time-picker-container .time-picker .btn-time.not-available:hover {
+            background: #fff;
+            color: #ccc;
+            border-color: #ccc; }
+      .book-card.time-picker-container .time-picker .hidden {
+        display: none; }
+  .book-card.players-picker-container {
+    flex: 7;
+    margin-left: 20px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12);
+    border: 1px solid;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px; }
+  .book-card .card-title {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-self: baseline;
+    width: 100%;
+    min-height: 70px;
+    background: #ddd;
+    font-weight: 300; }
+    .book-card .card-title span {
+      font-size: 2em; }
+  .book-card #react-counter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%; }
+    .book-card #react-counter .counter {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%; }
+      .book-card #react-counter .counter .counter-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80px;
+        height: 80px;
+        border: 1px solid #ccc;
+        color: #f04a4a;
+        font-size: 1.9em;
+        font-family: 'Londrina Shadow', cursive; }
+        .book-card #react-counter .counter .counter-box .fas {
+          font-size: 1em; }
+      .book-card #react-counter .counter .counter-btn {
+        cursor: pointer; }
+      .book-card #react-counter .counter .disabled {
+        cursor: default;
+        color: #f8a8a8; }
+      .book-card #react-counter .counter .counter-value {
+        border-left: none;
+        border-right: none;
+        font-size: 4.5em; }
+
+.contact-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 10px 0; }
+  .contact-info div {
+    width: 30%; }
+  .contact-info input {
+    height: 40px;
+    width: 100%;
+    padding: 5px;
+    outline: none;
+    font-size: 1.4em;
+    font-weight: 300;
+    border: 1px solid;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12); }
+  .contact-info .buffer {
+    height: 10px; }
+
+.form-submit {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+
+.error {
+  opacity: 0;
+  font-weight: 700;
+  margin: 0 5px;
+  color: #f04a4a; }
+  .error.time-err {
+    margin: auto 0 10px 0; }
+  .error.player-err {
+    margin: auto 0 10px 0; }
+
+.loader {
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  height: 64px; }
+  .loader div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 51px;
+    height: 51px;
+    margin: 6px;
+    border: 4px solid #f04a4a;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #f04a4a transparent transparent transparent; }
+  .loader div:nth-child(1) {
+    animation-delay: -0.45s; }
+  .loader div:nth-child(2) {
+    animation-delay: -0.3s; }
+  .loader div:nth-child(3) {
+    animation-delay: -0.15s; }
+
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
+.title {
+  color: #fff;
+  font-weight: 300; }
+
+@media (max-width: 868px) {
+  .game-title .title {
+    font-size: 1.8em; }
+
+  .row {
+    width: 90%; }
+    .row.choose {
+      flex-direction: column; }
+    .row .book-card {
+      margin: 0 0 10px 0;
+      width: 100%;
+      height: auto; }
+    .row.contact-info {
+      flex-direction: column; }
+      .row.contact-info div {
+        width: 100%; }
+      .row.contact-info input {
+        margin: 10px 0 0 0;
+        padding: 5px 0;
+        border: none; }
+    .row.form-submit {
+      justify-content: space-between;
+      margin-bottom: 10px; }
+
+  .book-card.time-picker-container .date-picker .date-view, .book-card.time-picker-container .date-picker .fas {
+    font-size: 2em; }
+  .book-card.time-picker-container .time-picker {
+    justify-content: center; } }
 
 /*# sourceMappingURL=book.css.map */

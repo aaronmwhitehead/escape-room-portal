@@ -1,0 +1,46 @@
+@import './shared/header.scss';
+@import './shared/shared.scss';
+
+.background-img {
+    background: url('../../assets/confetti.jpg');
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    position: absolute;
+    top:0;
+}
+
+.confirmation-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 60%;
+    height: 350px;
+    background: #eee;
+    border: 1px solid;
+    border-radius: 15px;
+    margin-top: 40px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12);
+
+    h1 {
+        font-size: 3.7em;
+        font-weight: 300;
+    }
+
+    .game-title {
+        color: red;
+        font-family: 'Londrina Shadow', cursive;
+        font-size: 3.3em;
+        text-align: center;
+    }
+
+    p {
+        padding: 10px;
+        width: 90%;
+        text-align: center;
+    }
+}
+
+@import './mobile/confirmation.scss';

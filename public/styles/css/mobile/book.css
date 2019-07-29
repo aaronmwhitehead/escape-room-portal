@@ -1,0 +1,30 @@
+@media (max-width: 868px) {
+  .game-title .title {
+    font-size: 1.8em; }
+
+  .row {
+    width: 90%; }
+    .row.choose {
+      flex-direction: column; }
+    .row .book-card {
+      margin: 0 0 10px 0;
+      width: 100%;
+      height: auto; }
+    .row.contact-info {
+      flex-direction: column; }
+      .row.contact-info div {
+        width: 100%; }
+      .row.contact-info input {
+        margin: 10px 0 0 0;
+        padding: 5px 0;
+        border: none; }
+    .row.form-submit {
+      justify-content: space-between;
+      margin-bottom: 10px; }
+
+  .book-card.time-picker-container .date-picker .date-view, .book-card.time-picker-container .date-picker .fas {
+    font-size: 2em; }
+  .book-card.time-picker-container .time-picker {
+    justify-content: center; } }
+
+/*# sourceMappingURL=book.css.map */

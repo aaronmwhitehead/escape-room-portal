@@ -1,0 +1,296 @@
+@import './shared/header.scss';
+@import './shared/shared.scss';
+@import './react/counter.scss';
+
+// .header {
+//     background: rgba(95, 208, 228, .6);
+// }
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // background: #eee;
+    width: 70%;
+    // margin-bottom: 10px;
+}
+
+.game-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px 0;
+    font-weight: 300;
+    span {
+        font-size: 2.5em;
+    }
+}
+
+.book-card {
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    align-items: center;
+    background: rgb(243, 243, 243);
+    height: 280px;
+    margin-bottom: 20px;
+
+    &.time-picker-container {
+        flex: 9;
+        margin: 0 20px 20px 0;
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12);
+        border: 1px solid;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+
+        .date-picker {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .date-view {
+                font-size: 2em;
+                padding: 10px;
+            }
+        
+            .fas {
+                cursor: pointer;
+                font-size: 1.5em;
+                padding: 10px;
+            }
+        }
+
+        .time-picker {
+            display: flex;
+            flex-wrap: wrap;
+            align-content: space-around;
+            width: 100%;
+
+            .btn-time {
+                margin: 20px 5px 0 5px;
+                height: 42px;
+                background: #fff;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                border: 1px solid #000;
+                width: 120px;
+                border-radius: 25px;
+                cursor: pointer;
+                transition: all .3s;
+                -moz-user-select: none; /* Firefox */
+                -ms-user-select: none; /* Internet Explorer */
+                -khtml-user-select: none; /* KHTML browsers (e.g. Konqueror) */
+                -webkit-user-select: none; /* Chrome, Safari, and Opera */
+                -webkit-touch-callout: none; /* Disable Android and iOS callouts*/
+
+                span {
+                    font-size: .7em;
+                }
+
+                &:hover, &.active {
+                    color: #fff;
+                    background: rgb(22, 36, 117);
+                    // border: 1px solid #ccc;
+                }
+
+                &.not-available {
+                    color: #ccc;
+                    border-color: #ccc;
+                    cursor: default;
+
+                    &:hover {
+                        background: #fff;
+                        color: #ccc;
+                        border-color: #ccc;
+                    }
+                }
+            }
+
+            .hidden {
+                display: none;
+            }
+        }
+
+    }
+
+    &.players-picker-container {
+        flex: 7;
+        margin-left: 20px;
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12);
+        border: 1px solid;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+
+    }
+
+    .card-title {
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        justify-self: baseline;
+        width: 100%;
+        min-height: 70px;
+        background: #ddd;
+        font-weight: 300;
+        
+        span {
+            font-size: 2em;
+        }
+    }
+
+    #react-counter {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+
+        .counter {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+
+            .counter-box {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 80px;
+                height: 80px;
+                border: 1px solid #ccc;
+                color: rgb(240, 74, 74);
+                font-size: 1.9em;
+                font-family: 'Londrina Shadow', cursive;
+
+                .fas {
+                    font-size: 1em;
+                }
+            }
+
+            .counter-btn {     
+                cursor: pointer;
+            }
+
+             .disabled {
+                cursor: default;
+                color: rgb(248, 168, 168);
+            }
+
+            .counter-value {
+            border-left: none;
+            border-right: none;
+            font-size: 4.5em;
+            }
+        }
+    }
+}
+
+.contact-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 10px 0;
+
+    div {
+        width: 30%;
+    }
+
+    input {
+        height: 40px;
+        width: 100%;
+        padding: 5px;
+        outline: none;
+        font-size: 1.4em;
+        font-weight: 300;
+        border: 1px solid;
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12);
+    }
+
+    .buffer {
+        height: 10px;
+    }
+}
+
+.form-submit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.error {
+    opacity: 0;
+    // display: hidden;
+    font-weight: 700;
+    margin: 0 5px;
+    color: rgb(240, 74, 74);
+
+    &.time-err {
+        margin: auto 0 10px 0;
+    }
+    &.player-err {
+        margin: auto 0 10px 0;
+    }
+}
+
+// Loader
+
+.loader {
+    display: inline-block;
+    position: relative;
+    width: 64px;
+    height: 64px;
+
+    div {
+        box-sizing: border-box;
+        display: block;
+        position: absolute;
+        width: 51px;
+        height: 51px;
+        margin: 6px;
+        border: 4px solid #f04a4a;
+        border-radius: 50%;
+        animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+        border-color: #f04a4a transparent transparent transparent;
+    }
+
+    div:nth-child(1) {
+        animation-delay: -0.45s;
+    }
+
+    div:nth-child(2) {
+        animation-delay: -0.3s;
+    }
+
+    div:nth-child(3) {
+        animation-delay: -0.15s;
+    }
+}
+
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.title {
+    color: #fff;
+    font-weight: 300;
+}
+
+@import './mobile/book.scss';

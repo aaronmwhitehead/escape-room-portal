@@ -3,3 +3,4 @@
 *.map
 NOTES*
 .DS_store
+*.sass-cache

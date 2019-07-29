@@ -6,18 +6,27 @@ const mongoose = require('mongoose');
 var hbs = require('express-handlebars');
 const dotenv = require('dotenv');
 
-const rooms = require('./routes/rooms');
 const router = require('./routes/router');
 
 dotenv.config();
 
-mongoose.connect(/*process.env.MONGO_URI ||*/ 'mongodb://127.0.0.1:27017/haas-escape-rooms', {
-    auto_reconnect: true,
-    useNewUrlParser: true,
-    useCreateIndex: true,
-    reconnectTries: 10, 
-    reconnectInterval: 3000
-}).catch(e => console.log('could not connect to mongodb', e));
+// mongoose.connect(process.env.MONGO_URI || 'mongodb://127.0.0.1:54321/haas-escape-rooms', {
+//     auto_reconnect: true,
+//     useNewUrlParser: true,
+//     useCreateIndex: true,
+//     reconnectTries: 10, 
+//     reconnectInterval: 3000
+// }).catch(e => console.log('could not connect to mongodb', e));
+
+var connectWithRetry = function () {
+    return mongoose.connect(process.env.MONGO_URI || 'mongodb://127.0.0.1:54321/haas-escape-rooms', {useNewUrlParser: true}, function (err) {
+        if (err) {
+            console.error('Failed to connect to mongo on startup - retrying in 1 sec');
+            setTimeout(connectWithRetry, 1000);
+        }
+    });
+};
+connectWithRetry();
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -43,16 +52,15 @@ app.use((req, res, next) => {
 });
 
 app.get('/', router.home);
+
 app.get('/book', router.book);
+app.post('/book', router.submitForm);
+
+app.get('/confirmation', router.confirmation);
 app.get('/faq', router.faq);
-app.post('/faq', router.faq);
 app.get('/about', router.about);
 app.get('/leaderboard', router.leaderboard);
-
-app.post('/add/rooms/:id', rooms.create);
-app.post('/rooms', rooms.retrieve);
-app.post('/update/rooms/:id', rooms.update);
-app.post('/delete/rooms/:id', rooms.delete);
+app.get('/admin', router.admin);
 
 app.get('/404', router.send404);
 

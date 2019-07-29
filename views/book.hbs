@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="styles/css/{{styles}}">
+    <link rel="stylesheet" type="text/css" href="styles/css/datepicker.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Londrina+Shadow&display=swap" rel="stylesheet">
+    <title>Haas Escape Games</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+</head>
+
+<body>
+    <div class="flex-container">
+        {{>header}}
+        <div class="container">
+            <div class="row game-title">
+                <span class="title">CHOOSE YOUR SPOT</span>
+            </div>
+            <div class="row choose">
+                <div class="book-card time-picker-container">
+                    <div class="card-title date-picker">
+                        <div class="date-view" data-toggle="datepicker" name="action">{{date}}</div>
+                        <i class="fas fa-calendar-day"></i>
+                    </div>
+                    <div class="time-picker"></div>
+                    <span class="error time-err">Please select a valid arrival time</span>
+                </div>
+                <div class="book-card players-picker-container">
+                    <div class="card-title counter-title">
+                        <span>How many players?</span>
+                    </div>
+                    <div id="react-counter">
+                        <div class="loader">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+                    <span class="error player-err">Please choose a valid number of players</span>
+                </div>
+            </div>
+            <div class="row">
+                <span class="title">CONTACT INFORMATION</span>
+            </div>
+            <div class="row contact-info">
+                <div>
+                    <input name="name" required="true" placeholder="*Name" autocomplete="off" type="text">
+                    <span class="error err1">Name cannot be blank</span>
+                </div>
+                <div>
+                    <input name="email" required="true" placeholder="*Email" autocomplete="off" type="text">
+                    <span class="error err2">Please enter a valid email address</span>
+                </div>
+                <div>
+                    <input name="phone" required="true" placeholder="*Phone Number" autocomplete="off" type="text">
+                    <span class="error err3">Please enter a valid phone number</span>
+                    <span class="buffer"></span>
+                </div>        
+            </div>
+            <div class="row form-submit">
+                <button type="reset" class="btn btn-secondary" onClick="window.location='/';">Cancel</button>
+                <button class="btn btn-primary" onclick="checkForm()">Continue</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    var all = [
+        {{#each allTimes}}
+        {time: '{{this.time}}', date: '{{this.date}}', spots_remaining: '{{this.spots_remaining}}'},
+        {{/each}}
+    ]
+</script>
+<script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+<script src="https://kit.fontawesome.com/de5146ae50.js"></script>
+<script type="text/babel" src="./scripts/book/book.js"></script>
+<script type="text/babel" src="./scripts/book/Counter.js"></script>
+<script src="./scripts/header.js"></script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="./scripts/datepicker.js"></script>
+
+</html>

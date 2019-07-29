@@ -1,0 +1,32 @@
+@media (max-width: 868px) {
+  .container {
+    width: 90%; }
+
+  .top-ranked {
+    flex-direction: column; }
+    .top-ranked .escape-time {
+      font-size: 1.3em; }
+    .top-ranked span {
+      font-size: .7em; }
+    .top-ranked .score {
+      height: 250px;
+      margin: 0 0 5px 0; }
+      .top-ranked .score .medal {
+        margin-top: 10px; }
+    .top-ranked .ranked-1 {
+      order: 1;
+      background: #fee101; }
+      .top-ranked .ranked-1 .rank {
+        font-size: 2.5em; }
+    .top-ranked .ranked-2 {
+      order: 2;
+      background: #d7d7d7; }
+      .top-ranked .ranked-2 .rank {
+        font-size: 2em; }
+    .top-ranked .ranked-3 {
+      order: 3;
+      background: #a77044; }
+      .top-ranked .ranked-3 .rank {
+        font-size: 1.5em; } }
+
+/*# sourceMappingURL=leaderboard.css.map */

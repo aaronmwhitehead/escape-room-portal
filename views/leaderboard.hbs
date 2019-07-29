@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="styles/css/{{styles}}">
+    <link rel="stylesheet" type="text/css" href="styles/css/datepicker.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Londrina+Shadow&display=swap" rel="stylesheet">
+    <title>Haas Escape Games</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+</head>
+
+<body>
+    <div class="flex-container">
+        {{>header}}
+        <div class="container">
+            <div class="top-ranked"></div>
+            <div class="other-scores"></div>
+            {{#each scores}}
+            <div class="score">
+                <div class="team-container">
+                    {{!-- {{#if this.photo}}
+                    <div class="team-photo" style="background: no-repeat url({{this.photo}}); background-size: contain;"></div>
+                    {{/if}} --}}
+                    <span class="team-name">{{this.team_name}}</span>
+                </div>
+                <span class="escape-time"><i class="far fa-clock"></i> {{this.time}}</span>
+            </div>
+            {{/each}}
+        </div>
+        <div class="background-img"></div>
+    </div>
+</body>
+<script src="https://kit.fontawesome.com/de5146ae50.js"></script>
+<script type="text/babel" src="./scripts/{{script}}"></script>
+<script src="./scripts/header.js"></script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+</html>

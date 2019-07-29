@@ -1,0 +1,54 @@
+@media (max-width: 868px) {
+    .container {
+        width: 90%;
+    }
+
+    .top-ranked {
+        flex-direction: column;
+
+        .escape-time {
+            font-size: 1.3em;
+        }
+
+        span {
+            font-size: .7em;
+        }
+
+        .score {
+            height: 250px;
+            // flex-direction: row;
+            margin: 0 0 5px 0;
+
+            .medal {
+                margin-top: 10px;
+            }
+        }
+
+        .ranked-1 {
+            order: 1;
+            background: rgba(254, 225, 1, 1);
+
+            .rank {
+                font-size: 2.5em;
+            }
+        }
+
+        .ranked-2 {
+            order: 2;
+            background: rgba(215, 215, 215, 1);
+
+            .rank {
+                font-size: 2em;
+            }
+        }
+
+        .ranked-3 {
+            order: 3;
+            background: rgba(167, 112, 68, 1);
+
+            .rank {
+                font-size: 1.5em;
+            }
+        }
+    }
+}
