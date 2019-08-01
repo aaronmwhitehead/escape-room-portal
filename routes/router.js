@@ -54,21 +54,27 @@ exports.book = (req, res, next) => {
                 allTimes.push({time: room.time, date: room.date, spots_remaining: room.spots_remaining});
             });
         })
+        .then(() => {
+            Room.find({ date: today_string })
+                .then((rooms) => {
+                    rooms.forEach((room) => {
+                        todayTimes.push(room.time);
+                    });
+                })
+                .then(() => {
+                    console.log(allTimes);
+                    console.log(todayTimes);
+                    res.render('book', { styles: 'book.css', script: 'book.js', date: `${today.getMonth() + 1}/${today.getDate()}/${today.getFullYear()}`, allTimes, todayTimes });
+                })
+                .catch((err) => {
+                    return console.log(new Error(err));
+                })
+        })
         .catch((err) => {
             return console.log(new Error(err));
         })
 
-    Room.find({ date: today_string })
-        .then((rooms) => {
-            rooms.forEach((room) => {
-                todayTimes.push(room.time);
-            });
-        })
-        .catch((err) => {
-            return console.log(new Error(err));
-        })
-
-    res.render('book', { styles: 'book.css', script: 'book.js', date: `${today.getMonth()+1}/${today.getDate()}/${today.getFullYear()}`, allTimes, todayTimes });
+    
 }
 
 exports.submitForm = (req, res, next) => {
