@@ -21,7 +21,7 @@ dotenv.config();
 var connectWithRetry = function () {
     return mongoose.connect(process.env.MONGO_URI || 'mongodb://127.0.0.1:54321/haas-escape-rooms', {useNewUrlParser: true}, function (err) {
         if (err) {
-            console.error('Failed to connect to mongo on startup - retrying in 1 sec');
+            console.error('Failed to connect to mongo on startup - retrying in 1 sec', err);
             setTimeout(connectWithRetry, 1000);
         }
     });
