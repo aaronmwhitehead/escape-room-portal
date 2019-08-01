@@ -2,35 +2,63 @@
 @import './shared/shared.scss';
 
 body { 
-  background: url('../../assets/colors.jpg') no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+    background: url('../../assets/colors2.jpg') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 .content {
-  margin-top: 40px;
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-
-  .title-container {
+    margin-top: 40px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    height: 200px;
+    padding: 20px;
+    opacity: 0;
+    animation-duration: 2s;
+    animation-fill-mode: both;
+    animation-name: fadeInUp;
 
-    h1 {
-      font-family: 'Londrina Shadow', cursive;
-      color: red;
-      font-size: 3em;
-      text-align: center;
+    .title-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        height: 200px;
+
+        span {
+            color: #fff;
+        }
+
+        h1 {
+        font-family: 'Londrina Shadow', cursive;
+        color: #fff;
+        font-size: 6em;
+        text-align: center;
+        }
     }
-  }
 
-  .btn {
-    height: 35px;
-  }
+    a {
+        width: 20px;
+        margin-top: 100px;
+        margin-left: 100px;
+    }
+
+    .btn {
+        font-size: 1.4em;
+        height: 35px;
+    }
+}
+
+@import './mobile/index.scss';
+
+@keyframes fadeInUp {
+    from {
+        transform: translate3d(0,40px,0)
+    }
+
+    to {
+        transform: translate3d(0,0,0);
+        opacity: 1
+    }
 }

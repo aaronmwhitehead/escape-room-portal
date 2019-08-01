@@ -1,0 +1,12 @@
+@media (max-width: 868px) {
+  .content {
+    align-items: center; }
+
+  .content a {
+    width: unset;
+    margin-left: 0; }
+
+  .content .title-container h1 {
+    font-size: 3em; } }
+
+/*# sourceMappingURL=index.css.map */

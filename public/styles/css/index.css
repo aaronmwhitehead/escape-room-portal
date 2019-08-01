@@ -120,7 +120,7 @@ body {
     background: #1d2b80; }
 
 body {
-  background: url("../../assets/colors.jpg") no-repeat center center fixed;
+  background: url("../../assets/colors2.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -130,19 +130,47 @@ body {
   margin-top: 40px;
   display: flex;
   flex-direction: column;
-  padding: 20px; }
+  padding: 20px;
+  opacity: 0;
+  animation-duration: 2s;
+  animation-fill-mode: both;
+  animation-name: fadeInUp; }
   .content .title-container {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     height: 200px; }
+    .content .title-container span {
+      color: #fff; }
     .content .title-container h1 {
       font-family: 'Londrina Shadow', cursive;
-      color: red;
-      font-size: 3em;
+      color: #fff;
+      font-size: 6em;
       text-align: center; }
+  .content a {
+    width: 20px;
+    margin-top: 100px;
+    margin-left: 100px; }
   .content .btn {
+    font-size: 1.4em;
     height: 35px; }
+
+@media (max-width: 868px) {
+  .content {
+    align-items: center; }
+
+  .content a {
+    width: unset;
+    margin-left: 0; }
+
+  .content .title-container h1 {
+    font-size: 3em; } }
+@keyframes fadeInUp {
+  from {
+    transform: translate3d(0, 40px, 0); }
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1; } }
 
 /*# sourceMappingURL=index.css.map */

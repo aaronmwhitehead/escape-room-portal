@@ -115,7 +115,7 @@ exports.submitForm = (req, res, next) => {
         text: `HOORAY! You signed up for 'Are You Smarter Than A Kindergartener?'!`,
         html: `<h3>Haas Escape Games</h3><br>
     <span>Howdy ${req.body.name}!</span><br><br>
-    <span>Thank you for booking a time for 'Are You Smarter Than A Kindergartener?'. Your game host will meet you in the <b>Haas TV Lounge</b>. Be sure to arrive at least <b>15 minutes before</b> the start of your game. Your booking details are shown below</span><br><br>
+    <span>Thank you for booking a time for 'Are You Smarter Than A Kindergartener?'. Your game host will meet you in the <b>Haas TV Lounge</b>. Be sure to arrive at least <b>15 minutes before</b> the start of your game. Your booking details are shown below.</span><br><br>
     <span>Good luck!</span><br><br>
     <h5>Booking Details</h5>
     <span>Date: ${req.body.date}</span><br>

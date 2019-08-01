@@ -12,34 +12,169 @@
 <body>
     <div class="flex-container">
         {{>header}}
-        <span class="title">ABOUT THE GAME DESIGNERS</span>
+        {{!-- <span class="title">MEET THE GAME DESIGNERS</span> --}}
         <div class="container">
-            <div class="col">
-                <div class="content left">
-                    <span>Aaron Whitehead</span>
-                    <span>Haas 2nd floor RA</span>
-                    <span>Class of 2019</span>
-                    <span>Computer Engineer</span>
-                    <span>"I like building escape rooms because it is a cool way to involve the dorm."</span>
-                    <span>39 Rooms Escaped</span>
+            <div class="profile">
+                <div class="column img">
+                    <img class="img" src="assets/ryan2.png"></img>
                 </div>
-                <div class="img img-aaron"></div>
-        
+                <div class="column">
+                    <div class="profile-title">
+                        <span class="name">Aaron Whitehead</span>
+                        <span class="role">Game Designer</span>
+                        <img class="img img-small" src="assets/ryan2.png"></img>
+                    </div>
+                    <div class="profile-body">
+                        <div class="attribs about">
+                            <span class="attribs-title">ABOUT</span>
+                            <span class="attrib">
+                                <i class="fas fa-graduation-cap"></i>
+                                <span class="attrib-content">Class of 2019</span>
+                            </span>
+                            <span class="attrib">
+                                <i class="fas fa-desktop"></i>
+                                <span class="attrib-content">Computer Engineer</span>
+                            </span>
+                            <span class="attrib">
+                                <i class="fas fa-user"></i>
+                                <span class="attrib-content">Haas 2nd floor RA</span>
+                            </span>
+                            <span class="attrib">
+                                <i class="fas fa-comment"></i>
+                                <span class="attrib-content">"I like building escape rooms because it is a cool way to involve the dorm."</span>
+                            </span>
+                        </div>
+                        <div class="attribs stats">
+                            <span class="attribs-title">STATS</span>
+                            <div class="stat">
+                                <span class="stat-name">Name A</span>
+                                <div class="bar">
+                                    <div class="value" style="width: 70%"></div>
+                                </div>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-name">Another Name</span>
+                                <div class="bar">
+                                    <div class="value" style="width: 20%"></div>
+                                </div>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-name">This</span>
+                                <div class="bar">
+                                    <div class="value" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-name">Stat</span>
+                                <div class="bar">
+                                    <div class="value" style="width: 40%"></div>
+                                </div>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-name">Escaped Rooms</span>
+                                <div class="bar">
+                                    <div class="value" style="width: 100%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col">
-        
-                <div class="img img-kathryn"></div>
-                <div class="content right">
-                    <span>Kathryn Hall</span>
-                    <span>Girlfriend of Haas 2nd floor RA</span>
-                    <span>Class of 2019</span>
-                    <span>Mechanical Engineer</span>
-                    <span>"I like building escape rooms because it means I don't have to study"</span>
-                    <span>46 Rooms Escaped</span>
+            <div class="profile" id="bottom">
+                <div class="column">
+                    <div class="profile-title">
+                        <span class="name">Kathryn Hall</span>
+                        <span class="role">Game Designer</span>
+                        <img class="img img-small" src="assets/selena.png"></img>
+                    </div>
+                    <div class="profile-body">
+                        <div class="attribs about">
+                            <span class="attribs-title">ABOUT</span>
+                            <span class="attrib">
+                                <i class="fas fa-graduation-cap"></i> 
+                                <span class="attrib-content">Class of 2019</span>
+                            </span>
+                            <span class="attrib">
+                                <i class="fas fa-wrench"></i>
+                                <span class="attrib-content">Mechanical Engineer</span>
+                            </span>
+                            <span class="attrib">
+                                <i class="fas fa-heart"></i>
+                                <span class="attrib-content">Girlfriend of Haas 2nd floor RA</span>
+                            </span>
+                            <span class="attrib">
+                                <i class="fas fa-comment"></i>
+                                <span class="attrib-content">"I like building escape rooms because it means I don't have to study"</span>
+                            </span>
+                        </div>
+                        <div class="attribs stats">
+                            <span class="attribs-title">STATS</span>
+                            <div class="stat">
+                                <span class="stat-name">Name A</span>
+                                <div class="bar">
+                                    <div class="value" style="width: 70%"></div>
+                                </div>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-name">Another Name</span>
+                                <div class="bar">
+                                    <div class="value" style="width: 20%"></div>
+                                </div>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-name">This</span>
+                                <div class="bar">
+                                    <div class="value" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-name">Stat</span>
+                                <div class="bar">
+                                    <div class="value" style="width: 40%"></div>
+                                </div>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-name">Escaped Rooms</span>
+                                <div class="bar">
+                                    <div class="value" style="width: 100%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column img">
+                    <img class="img" src="assets/selena.png"></img>
                 </div>
             </div>
         </div>
     </div>
 </body>
 <script src="./scripts/header.js"></script>
+<script src="https://kit.fontawesome.com/de5146ae50.js"></script>
 </html>
+
+{{!-- 
+<div class="col">
+    <div class="content left">
+        <span>Aaron Whitehead</span>
+        <span>Haas 2nd floor RA</span>
+        <span>Class of 2019</span>
+        <span>Computer Engineer</span>
+        <span>"I like building escape rooms because it is a cool way to involve the dorm."</span>
+        <span>39 Rooms Escaped</span>
+    </div>
+    <div class="img img-aaron"></div>
+
+</div>
+<div class="col">
+
+    <div class="img img-kathryn"></div>
+    <div class="content right">
+        <span>Kathryn Hall</span>
+        <span>Girlfriend of Haas 2nd floor RA</span>
+        <span>Class of 2019</span>
+        <span>Mechanical Engineer</span>
+        <span>"I like building escape rooms because it means I don't have to study"</span>
+        <span>46 Rooms Escaped</span>
+    </div>
+</div> --}}

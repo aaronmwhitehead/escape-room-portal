@@ -1,0 +1,14 @@
+@media (max-width: 868px) {
+  .profile-body {
+    flex-direction: column; }
+    .profile-body .attribs {
+      padding: 0; }
+
+  .profile .column {
+    flex: 1;
+    padding: 10px; }
+    .profile .column.img {
+      flex: 1;
+      display: none; } }
+
+/*# sourceMappingURL=about.css.map */
