@@ -58,7 +58,7 @@ app.post('/book', router.submitForm);
 
 app.get('/confirmation', router.confirmation);
 app.get('/faq', router.faq);
-app.get('/about', router.about);
+app.get('/about', router.underConstruction);
 app.get('/leaderboard', router.leaderboard);
 app.get('/admin', router.admin);
 

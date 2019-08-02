@@ -10,6 +10,10 @@ exports.home = function(req, res, next) {
     res.render('index', { styles: 'index.css' });
 };
 
+exports.underConstruction = (req, res, next) => {
+    res.render('dev', { layout: '', styles: '404.css' });
+};
+
 exports.leaderboard = (req, res, next) => {
     const scores = [];
     Score.find({})
