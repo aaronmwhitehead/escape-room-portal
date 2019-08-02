@@ -31,11 +31,12 @@ exports.leaderboard = (req, res, next) => {
         }
         scores.sort(compare);
     })
+    .then(() => {
+        res.render('leaderboard', { styles: 'leaderboard.css', script: 'leaderboard.js', scores });
+    })
     .catch((err) => {
         return console.log(new Error(err));
     });
-
-    res.render('leaderboard', { styles: 'leaderboard.css', script: 'leaderboard.js', scores });
 };
 
 exports.send404 = (req, res, next) => {

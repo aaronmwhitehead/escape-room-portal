@@ -6,13 +6,7 @@ const { uniqueNamesGenerator } = require('unique-names-generator');
 var collections = ['rooms', 'scores'];
 const now = new Date();
 
-mongoose.connect(/*process.env.MONGO_URI ||*/ 'mongodb://127.0.0.1:54321/haas-escape-rooms', {
-    auto_reconnect: true,
-    useNewUrlParser: true,
-    useCreateIndex: true,
-    reconnectTries: 10,
-    reconnectInterval: 3000
-})
+mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true })
 .then((db) => {
     collections.forEach((collection) => {
         mongoose.connection.db.dropCollection(collection, (err) => {
