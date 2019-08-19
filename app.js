@@ -50,7 +50,7 @@ app.post('/book', router.submitForm);
 
 app.get('/confirmation', router.confirmation);
 app.get('/faq', router.faq);
-app.get('/about', router.underConstruction);
+app.get('/about', router.home);
 app.get('/leaderboard', router.leaderboard);
 app.get('/admin', router.admin);
 
