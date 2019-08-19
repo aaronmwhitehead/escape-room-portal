@@ -10,14 +10,6 @@ const router = require('./routes/router');
 
 dotenv.config();
 
-// mongoose.connect(process.env.MONGO_URI || 'mongodb://127.0.0.1:54321/haas-escape-rooms', {
-//     auto_reconnect: true,
-//     useNewUrlParser: true,
-//     useCreateIndex: true,
-//     reconnectTries: 10, 
-//     reconnectInterval: 3000
-// }).catch(e => console.log('could not connect to mongodb', e));
-
 var connectWithRetry = function () {
     return mongoose.connect(process.env.MONGO_URI || 'mongodb://127.0.0.1:54321/haas-escape-rooms', {useNewUrlParser: true}, function (err) {
         if (err) {
@@ -42,7 +34,7 @@ app.engine('hbs', hbs({
     partialsDir: __dirname + '/views/partials/'
 }));
 
-// Redirect all routes with trailing spaces to the route without
+// Redirect all routes with trailing slashes to the route without
 app.use((req, res, next) => {
     const test = /\?[^]*\//.test(req.url);
     if (req.url.substr(-1) === '/' && req.url.length > 1 && !test)

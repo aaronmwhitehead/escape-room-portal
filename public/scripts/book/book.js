@@ -1,26 +1,42 @@
 $('[data-toggle="datepicker"]').datepicker({
     format: 'm/d/yyyy',
-    startDate: new Date(),
+    startDate: new Date('8/30/2019'),
+    endDate: new Date('9/8/2019'),
     trigger: '.fa-calendar-day',
-    autoHide: true,
+    autoShow: true,
+    filter: function(date) {
+        if (date.getDay() > 0 && date.getDay() < 5) {
+            return false; // Disable all Mondays, but still leave months/years, whose first day is a Mondays, enabled.
+        }
+    }
 });
 const now = new Date();
 const today = `${now.getMonth() + 1}/${now.getDate()}/${now.getFullYear()}`;
 
 // May need to take this out when adding AM times
-// function compare(a, b) {
-//     const genreA = Number(a.time.match(/[0-9]+/g)[0]);
-//     const genreB = Number(b.time.match(/[0-9]+/g)[0]);
+function compare(a, b) {
+    const timeA = Number(a.time.match(/[0-9]+/g)[0]);
+    const timeB = Number(b.time.match(/[0-9]+/g)[0]);
 
-//     let comparison = 0;
-//     if (genreA > genreB) {
-//         comparison = 1;
-//     } else if (genreA < genreB) {
-//         comparison = -1;
-//     }
-//     return comparison;
-// }
-// window.all.sort(compare);
+    let comparison = 0;
+    if (timeA > timeB) {
+        comparison = 1;
+    } else if (timeA < timeB) {
+        comparison = -1;
+    }
+    return comparison;
+}
+window.all.sort(compare);
+
+for(let i = 1; i < 5; i++) {
+    window.all.unshift(window.all[window.all.length-i]);
+}
+
+for(let i = 1; i < 5; i++) {
+    window.all.pop();
+}
+
+console.log(window.all);
 
 window.all.forEach((slot) => {
     if (slot.date === today) {
@@ -158,13 +174,15 @@ function checkForm() {
         players: players
     };
 
-    // Send request to Express
-    $.ajax({
-        type: "POST",
-        url: `${window.location.href}`,
-        contentType: 'application/json',
-        data: JSON.stringify(data), 
-    });
-
-    window.location.replace(`${window.location.origin}/confirmation`);
+    $.post(`${window.location.href}`, data)
+        .done(function() {
+            console.log('howdy');
+            window.location.replace(`${window.location.origin}/confirmation`)
+        })
+        .fail(function() {
+            window.location.replace(`${window.location.origin}/book`)
+            window.alert('An error occurred. Please try again.');
+        })
 }
+
+
