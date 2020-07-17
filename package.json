@@ -29,7 +29,7 @@
     "hbs": "^4.0.4",
     "http": "0.0.0",
     "http-errors": "^1.7.3",
-    "lodash": ">=4.17.13",
+    "lodash": ">=4.17.19",
     "mocha": "^6.1.4",
     "moment-timezone": "^0.5.26",
     "mongodb": "^3.2.7",
